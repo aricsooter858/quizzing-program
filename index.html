@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="quizzing_app">
+    <head>
+        <title>Quzzing Program</title>
+        <link href="bootstrap-slate.css" rel="stylesheet" type="text/css" />
+        <meta charset="utf-8" />
+        <script src = "https://code.angularjs.org/1.6.2/angular.min.js"></script>
+        <script src = "app.js"></script>
+    </head>
+    <body>
+        <h1>Quizzing Program</h1>
+        <div ng-controller="QuizController as qc">
+            <label for="SelectedStudent">Selected Student: </label>
+            {{qc.selectedStudent.name}} </br>
+            <label for="SelectedQuestion">Selected Question: </label>
+            {{qc.selectedQuestion.question}} </br>
+            
+            <label for="Answer">Answer: </label>
+            <input name="QuizAnswer" type="text" ng-model="qc.QuizAnswer"/>
+            <p><input type="button" class="btn btn-success" value="Correct" ng-click="qc.update(qc.QuizAnswer)" /> <input type="button" class="btn btn-danger" value="Incorrect" ng-click="qc.update(qc.QuizAnswer)" /></p>
+            <p><input type="button" value="Select Student" ng-click="qc.selectStudent()"/></p>
+            <p><input type="button" value="Select Question" ng-click="qc.selectQuestion()"/></p>
+        </div>
+    </body>
+</html>
